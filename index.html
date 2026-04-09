@@ -464,6 +464,75 @@
     footer { flex-direction: column; gap: 16px; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
   }
+
+  /* === LIGHT THEME OVERRIDES === */
+  nav .logo-text { color: #D4D0C8; }
+  nav .h-logo circle { fill: #D4D0C8; }
+  nav .nav-link { color: #A8A49C; }
+  nav .nav-link:hover { color: #D4D0C8; }
+  nav .nav-link.primary { background: #D4D0C8; color: #0A0A0A; }
+  nav .nav-link.primary:hover { background: #fff; }
+  nav .nav-link.deal-room-link { color: var(--green); border-color: rgba(34,197,94,0.25); }
+
+  .ticker-bar { background: #0A0A0A !important; }
+  .ticker-symbol { color: #A8A49C !important; }
+  .ticker-price { color: #D4D0C8 !important; }
+
+  .market-panel { background: #0E0E0E !important; border-color: rgba(255,255,255,0.06) !important; }
+  .market-panel-header { border-color: rgba(255,255,255,0.06) !important; }
+  .market-panel-title { color: #6B6760 !important; }
+  .market-panel-time { color: #6B6760 !important; }
+  .market-cell { border-color: rgba(255,255,255,0.06) !important; }
+  .market-symbol { color: #6B6760 !important; }
+  .market-price { color: #D4D0C8 !important; }
+  .market-price .unit { color: #6B6760 !important; }
+
+  .deal-room-section { background: #0E0E0E !important; }
+  .deal-room-text h2 { color: #D4D0C8; }
+  .deal-room-text p { color: #A8A49C; }
+  .dr-feature { color: #A8A49C; }
+  .deal-room-visual { background: #0A0A0A !important; border-color: rgba(255,255,255,0.06) !important; }
+  .deal-room-mockup-header { border-color: rgba(255,255,255,0.06) !important; }
+  .mockup-title { color: #6B6760 !important; }
+  .mockup-label { color: #6B6760 !important; }
+  .mockup-value { color: #A8A49C !important; }
+  .mockup-row { border-color: rgba(255,255,255,0.06) !important; }
+
+  .modal-overlay { background: rgba(0,0,0,0.85); }
+  .modal { background: #0E0E0E !important; }
+  .modal-header { background: #0E0E0E !important; border-color: rgba(255,255,255,0.06) !important; }
+  .modal-title { color: #D4D0C8 !important; }
+  .modal-close { color: #6B6760; }
+  .form-label { color: #6B6760 !important; }
+  .form-section-label { color: #6B6760 !important; }
+  .form-input, .form-select, .form-textarea { background: #0A0A0A !important; color: #D4D0C8 !important; border-color: rgba(255,255,255,0.08) !important; }
+  .form-input::placeholder, .form-textarea::placeholder { color: #6B6760 !important; }
+  .form-toggle { background: #0A0A0A !important; color: #A8A49C !important; border-color: rgba(255,255,255,0.08) !important; }
+  .form-divider { border-color: rgba(255,255,255,0.06) !important; }
+  .form-submit { background: #D4D0C8 !important; color: #0A0A0A !important; }
+  .form-note { color: #6B6760 !important; }
+
+  .btn-primary { background: #0A0A0A; color: #F0ECE2; }
+  .btn-primary:hover { background: #1A1A1A; }
+
+  .service-card:hover { background: #E8E4DA; }
+  .commodity-row:hover { background: #E8E4DA; }
+  .region-card:hover { background: #E8E4DA; }
+
+  .footer-links a { color: #6B6760; }
+  .footer-links a:hover { color: #0A0A0A; }
+
+  /* Commodity tooltip */
+  .commodity-row { position: relative; }
+  .commodity-tooltip {
+    display: none; position: absolute; top: 100%; left: 0; right: 0; z-index: 10;
+    background: #0E0E0E; border: 1px solid rgba(255,255,255,0.06);
+    padding: 16px 20px; font-size: 13px; line-height: 1.6; color: #A8A49C;
+    font-family: var(--sans);
+  }
+  .commodity-tooltip strong { color: #D4D0C8; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; }
+  .commodity-row:hover .commodity-tooltip { display: block; }
+
 </style>
 </head>
 <body>
@@ -507,6 +576,10 @@
     <div class="ticker-item"><span class="ticker-symbol">NH3</span><span class="ticker-price">$685.00</span><span class="ticker-change up">+21.3%</span></div>
     <div class="ticker-item"><span class="ticker-symbol">POTASH MOP</span><span class="ticker-price">$298.00</span><span class="ticker-change up">+8.4%</span></div>
     <div class="ticker-item"><span class="ticker-symbol">NPK</span><span class="ticker-price">$465.00</span><span class="ticker-change up">+14.1%</span></div>
+    <div class="ticker-item"><span class="ticker-symbol">SUGAR IC45</span><span class="ticker-price">$548.00</span><span class="ticker-change up">+12.3%</span></div>
+    <div class="ticker-item"><span class="ticker-symbol">COPPER CON</span><span class="ticker-price">$2,840</span><span class="ticker-change up">+9.7%</span></div>
+    <div class="ticker-item"><span class="ticker-symbol">SUGAR IC45</span><span class="ticker-price">$548.00</span><span class="ticker-change up">+12.3%</span></div>
+    <div class="ticker-item"><span class="ticker-symbol">COPPER CON</span><span class="ticker-price">$2,840</span><span class="ticker-change up">+9.7%</span></div>
     <div class="ticker-item"><span class="ticker-dot live"></span><span class="ticker-symbol">HORMUZ</span><span class="ticker-price">DISRUPTED</span><span class="ticker-change down">SEVERE</span></div>
     <div class="ticker-item"><span class="ticker-symbol">DAP</span><span class="ticker-price">$612.00</span><span class="ticker-change up">+18.7%</span></div>
     <div class="ticker-item"><span class="ticker-symbol">NAT GAS</span><span class="ticker-price">$4.82</span><span class="ticker-change up">+38.1%</span></div>
@@ -661,6 +734,8 @@
       <div class="commodity-tag">Petroleum · Ultra Low Sulphur</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>DIESEL (ULSD)</strong><br>Ultra-low sulphur diesel, 10ppm specification. Major refinery source, 650k bpd capacity. FOB Lekki. Min 20,000 MT. Platts-linked pricing. Buyer arranges vessel.</div>
+  
   </div>
   <div class="commodity-row">
     <div class="commodity-left">
@@ -671,6 +746,8 @@
       <div class="commodity-tag">Petroleum · Aviation</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>JET A-1</strong><br>Aviation fuel, AFQRJOS spec compliant. Consistent monthly supply from major refinery. FOB Lekki. Min 20,000 MT. Platts-linked pricing.</div>
+  
   </div>
   <div class="commodity-row">
     <div class="commodity-left">
@@ -681,6 +758,8 @@
       <div class="commodity-tag">Petroleum · Motor Spirit</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>GASOLINE (PMS)</strong><br>Motor spirit RON 92. Reliable monthly allocation from Africa's largest single-train refinery. FOB Lekki. Min 20,000 MT.</div>
+  
   </div>
   <div class="commodity-row">
     <div class="commodity-left">
@@ -691,6 +770,8 @@
       <div class="commodity-tag">Nitrogen Fertiliser · Granular</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>UREA</strong><br>Granular urea, nitrogen fertiliser. 3M MT/year production capacity. Export grade. FOB Lagos. Min 10,000 MT. Spot and term contracts.</div>
+  
   </div>
   <div class="commodity-row">
     <div class="commodity-left">
@@ -701,6 +782,8 @@
       <div class="commodity-tag">Compound Fertiliser</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>NPK</strong><br>Compound fertiliser, multiple blend ratios available. Major Nigerian producer. FOB Lagos. Min 5,000 MT.</div>
+  
   </div>
   <div class="commodity-row">
     <div class="commodity-left">
@@ -711,6 +794,8 @@
       <div class="commodity-tag">Fertiliser</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>POTASH (MOP)</strong><br>Muriate of Potash, KCl 60% min K2O. Verified suppliers. FOB origin. Min 10,000 MT. LC at sight.</div>
+  
   </div>
   <div class="commodity-row">
     <div class="commodity-left">
@@ -721,6 +806,8 @@
       <div class="commodity-tag">Fertiliser Feedstock · Industrial</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>SULFUR</strong><br>Bright yellow, 99.5%+ purity. Non-Gulf supply available during Hormuz disruption. FOB origin. Min 5,000 MT.</div>
+  
   </div>
   <div class="commodity-row">
     <div class="commodity-left">
@@ -731,6 +818,30 @@
       <div class="commodity-tag">Chemical Feedstock</div>
       <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
     </div>
+    <div class="commodity-tooltip"><strong>AMMONIA</strong><br>Anhydrous ammonia for industrial and agricultural use. Verified sources. FOB origin. Min 5,000 MT.</div>
+  
+  </div>
+  <div class="commodity-row">
+    <div class="commodity-left">
+      <div class="commodity-name">Sugar</div>
+      <div class="commodity-formula">ICUMSA</div>
+    </div>
+    <div class="commodity-meta">
+      <div class="commodity-tag">Agricultural · Raw &amp; Refined</div>
+      <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
+    </div>
+    <div class="commodity-tooltip"><strong>SUGAR</strong><br>Raw and refined sugar (ICUMSA 45, 150, 600-1200). Spot and contract. FOB origin. Min 5,000 MT. LC at sight.</div>
+  </div>
+  <div class="commodity-row">
+    <div class="commodity-left">
+      <div class="commodity-name">Copper Concentrate</div>
+      <div class="commodity-formula">Cu</div>
+    </div>
+    <div class="commodity-meta">
+      <div class="commodity-tag">Metals &amp; Mining</div>
+      <div class="commodity-status status-active"><span class="status-dot" style="background:var(--green)"></span> Active</div>
+    </div>
+    <div class="commodity-tooltip"><strong>COPPER CONCENTRATE</strong><br>Copper concentrate 20-30% Cu content. Sourced from verified mining operations. FOB origin. Min 5,000 MT. LC at sight.</div>
   </div>
 </section>
 
@@ -896,6 +1007,13 @@
               <optgroup label="Industrial">
                 <option value="Sulfur">Sulfur</option>
                 <option value="Ammonia">Ammonia</option>
+              </optgroup>
+              <optgroup label="Agricultural">
+                <option value="Sugar (Raw)">Sugar (Raw)</option>
+                <option value="Sugar (Refined ICUMSA 45)">Sugar (Refined ICUMSA 45)</option>
+              </optgroup>
+              <optgroup label="Metals">
+                <option value="Copper Concentrate">Copper Concentrate</option>
               </optgroup>
               <option value="Other">Other</option>
             </select>
