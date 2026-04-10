@@ -1154,7 +1154,7 @@
 
     try {
       var API = window.location.hostname === 'localhost'
-        ? 'http://localhost:8080' : 'https://harovest-api-production.up.railway.app';
+        ? 'http://localhost:8080' : 'https://api.harovest.com';
       var res = await fetch(API + '/api/enquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
