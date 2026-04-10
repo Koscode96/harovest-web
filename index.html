@@ -291,7 +291,7 @@
 
   /* REGIONS */
   .regions { border-top: 1px solid var(--border); }
-  .regions-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); }
+  .regions-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); }
   .region-card { background: var(--bg); padding: 32px 24px; transition: background 0.3s ease; }
   .region-card:hover { background: var(--bg-elevated); }
   .region-card h4 { font-size: 16px; font-weight: 500; margin-bottom: 8px; }
@@ -446,24 +446,7 @@
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
 
-  @media (max-width: 768px) {
-    nav { padding: 0 16px; }
-    .nav-links { gap: 4px; }
-    .nav-link { padding: 6px 10px; font-size: 10px; }
-    .ticker-bar { display: none; }
-    .hero { padding: 100px 16px 60px; }
-    .hero-actions { flex-direction: column; }
-    .btn { text-align: center; }
-    section { padding: 64px 16px; }
-    .market-grid { grid-template-columns: repeat(2, 1fr); }
-    .market-cell { border-bottom: 1px solid var(--border); }
-    .services-grid { grid-template-columns: 1fr; }
-    .commodity-row { flex-direction: column; align-items: flex-start; gap: 12px; }
-    .deal-room-grid { grid-template-columns: 1fr; }
-    .regions-grid { grid-template-columns: 1fr 1fr; }
-    footer { flex-direction: column; gap: 16px; text-align: center; }
-    .footer-links { flex-wrap: wrap; justify-content: center; }
-  }
+
 
   /* === LIGHT THEME OVERRIDES === */
   nav .logo-text { color: #D4D0C8; }
@@ -532,6 +515,73 @@
   }
   .commodity-tooltip strong { color: #D4D0C8; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; }
   .commodity-row:hover .commodity-tooltip { display: block; }
+
+
+  /* === MOBILE/TABLET FIXES === */
+  @media (max-width: 1024px) {
+    .market-grid { grid-template-columns: repeat(2, 1fr); }
+    .market-cell { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .regions-grid { grid-template-columns: repeat(3, 1fr); }
+    .deal-room-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 16px; height: 48px; }
+    nav .logo-text { font-size: 12px; }
+    .nav-links { gap: 4px; }
+    .nav-link { padding: 5px 8px; font-size: 10px; }
+
+    .ticker-bar { height: 32px; }
+    .ticker-item { font-size: 10px; padding: 0 16px; height: 32px; }
+
+    .hero { padding: 100px 16px 48px; min-height: auto; }
+    .hero h1 { font-size: 32px; }
+    .hero-sub { font-size: 13px; }
+    .hero-actions { flex-direction: column; gap: 10px; }
+    .hero-actions .btn { text-align: center; width: 100%; }
+
+    .market-panel { margin-top: 40px; }
+    .market-grid { grid-template-columns: 1fr 1fr; }
+    .market-cell { padding: 14px; }
+    .market-price { font-size: 18px; }
+
+    section { padding: 48px 16px; }
+    .section-title { font-size: 22px; margin-bottom: 32px; }
+
+    .services-grid { grid-template-columns: 1fr; }
+    .service-card { padding: 28px 20px; }
+
+    .commodity-row { flex-direction: column; align-items: flex-start; gap: 8px; padding: 20px 0; }
+    .commodity-name { font-size: 18px; }
+    .commodity-tooltip { position: relative; top: auto; display: none; }
+    .commodity-row:active .commodity-tooltip { display: block; }
+
+    .deal-room-grid { grid-template-columns: 1fr; gap: 24px; }
+    .deal-room-text h2 { font-size: 22px; }
+    .deal-room-actions { flex-direction: column; }
+    .deal-room-actions .btn { text-align: center; width: 100%; }
+
+    .regions-grid { grid-template-columns: 1fr 1fr; }
+    .region-card { padding: 20px 16px; }
+
+    .cta-section { padding: 64px 16px; }
+    .cta-section .section-title { font-size: 20px; }
+    .cta-actions { flex-direction: column; }
+    .cta-actions .btn { text-align: center; width: 100%; }
+
+    footer { flex-direction: column; gap: 16px; text-align: center; padding: 24px 16px; }
+    .footer-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+
+    .modal { max-height: 95vh; }
+    .modal-body { padding: 16px; }
+    .form-row-half { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 380px) {
+    .hero h1 { font-size: 28px; }
+    .market-grid { grid-template-columns: 1fr; }
+    .regions-grid { grid-template-columns: 1fr; }
+  }
 
 </style>
 </head>
@@ -893,6 +943,7 @@
     <div class="region-card"><h4>Middle East</h4><p>UAE · Qatar · Saudi Arabia</p></div>
     <div class="region-card"><h4>South & SE Asia</h4><p>India · Bangladesh · Indonesia</p></div>
     <div class="region-card"><h4>East Africa</h4><p>Kenya · Tanzania · Ethiopia</p></div>
+    <div class="region-card"><h4>Americas</h4><p>Brazil · Colombia · USA</p></div>
   </div>
 </section>
 
@@ -926,8 +977,7 @@
   </div>
   <div class="footer-links">
     <a href="/cdn-cgi/l/email-protection#4e3a3c2f2a2b0e262f3c21382b3d3a602d2123"><span class="__cf_email__" data-cfemail="e59197848180a58d84978a93809691cb868a88">[email&#160;protected]</span></a>
-    <a href="https://wa.me/447XXXXXXXXX">WhatsApp</a>
-    <a href="https://linkedin.com/in/">LinkedIn</a>
+    <a href="https://wa.me/447514523194">WhatsApp</a>
     <a href="#">London, UK</a>
   </div>
 </footer>
